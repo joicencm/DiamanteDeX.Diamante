@@ -4,7 +4,16 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            ExibirCabecalho();
+
+            Console.ReadLine();
+        }
+
+        static void ExibirCabecalho()
+        {
+            Console.WriteLine("---------------  Diamente de X --------------- ");
+            Console.WriteLine("Digite o numero para o tamanho do seu Diamente");
         }
     }
+    
 }
