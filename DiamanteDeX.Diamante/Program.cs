@@ -6,7 +6,7 @@
         {
             ExibirCabecalho();           
             int numero = ObterNumero();
-
+            ExibirLinhaQtdDiamente(numero);
            
 
             Console.ReadLine();
@@ -41,6 +41,29 @@
                 }
             }
             return numero;
+        }
+
+        static void ExibirDiamente(int tamanho)
+        {
+            int meio = tamanho / 2;
+            for (int l = 0; l <= meio; l++)
+            {
+                int espaco = Math.Abs((tamanho / 2) - l);
+                int qtd = tamanho - (espaco * 2);
+
+                string linhaDiamante = new string(' ', espaco) + new string('X', qtd);
+                Console.WriteLine(linhaDiamante);
+            }
+
+            for (int l = meio -1; l >= 0; l--)
+            {
+                int espaco = Math.Abs((tamanho / 2) - l);
+                int qtd = tamanho - (espaco * 2);
+
+                string linhaDiamante = new string(' ', espaco) + new string('X', qtd);
+                Console.WriteLine(linhaDiamante);
+            }
+                        
         }
     }
 
