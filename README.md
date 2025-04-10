@@ -1,5 +1,7 @@
 ﻿# 💎 Diamante de X
 
+![](https://imgur.com/BUJ1k3e.gif)
+
 Um pequeno projeto de console em C# que gera um diamante com a letra **X**, com base em um número ímpar fornecido pelo usuário (exceto o número 1).
 
 ---
