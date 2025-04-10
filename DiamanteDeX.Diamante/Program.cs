@@ -47,22 +47,23 @@
             int meio = tamanho / 2;
             for (int l = 0; l <= meio; l++)
             {
-                int espaco = Math.Abs((tamanho / 2) - l);
-                int qtd = tamanho - (espaco * 2);
-
-                string linhaDiamante = new string(' ', espaco) + new string('X', qtd);
-                Console.WriteLine(linhaDiamante);
+                ExibirQtdLinhaDiamante(tamanho, l);
             }
 
             for (int l = meio -1; l >= 0; l--)
             {
-                int espaco = Math.Abs((tamanho / 2) - l);
-                int qtd = tamanho - (espaco * 2);
-
-                string linhaDiamante = new string(' ', espaco) + new string('X', qtd);
-                Console.WriteLine(linhaDiamante);
+                ExibirQtdLinhaDiamante(tamanho, l);
             }
                         
+        }
+
+        static void ExibirQtdLinhaDiamante(int tamanho, int linha)
+        {
+            int espaco = Math.Abs((tamanho / 2) - linha);
+            int qtd = tamanho - (espaco * 2);
+
+            string linhaDiamante = new string(' ', espaco) + new string('X', qtd);
+            Console.WriteLine(linhaDiamante);
         }
 
     }
