@@ -1,33 +1,47 @@
-﻿namespace DiamanteDeX.Diamante
+﻿using System.Diagnostics.Tracing;
+
+namespace DiamanteDeX.Diamante
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            //input
             ExibirCabecalho();
-            int numero = ObterNumero();
-            ExibirDiamente(numero);
 
+            Diamante.tamanho = ObterNumero();
+
+            //processamento
+            
+            Diamante.Desenhar();
+
+            //output
+            ExibirResultado(Diamante.desenho);            
+        }
+
+        static void ExibirResultado(string desenho)
+        {
+            Console.WriteLine(desenho);
             Console.ReadLine();
         }
 
         static void ExibirCabecalho()
         {
-            Console.WriteLine("--------------- Diamente de X ---------------- ");
-            Console.WriteLine("Digite o numero para o tamanho do seu Diamente");
+            Console.WriteLine("--------------- Diamente de X ---------------- ");            
         }
 
         static int ObterNumero()
-        {
+        {            
             int numero;
             while (true)
             {
+                Console.WriteLine("Digite o numero para o tamanho do seu Diamente: ");
+
                 if (int.TryParse(Console.ReadLine(), out numero) && numero % 2 != 0 && numero != 1)
                 {
                     break;
                 }
                 else
-
                 {
                     if (numero == 1)
                     {
@@ -39,33 +53,8 @@
                     }
                 }
             }
+            
             return numero;
-        }
-
-        static void ExibirDiamente(int tamanho)
-        {
-            int meio = tamanho / 2;
-            for (int l = 0; l <= meio; l++)
-            {
-                ExibirQtdLinhaDiamante(tamanho, l);
-            }
-
-            for (int l = meio - 1; l >= 0; l--)
-            {
-                ExibirQtdLinhaDiamante(tamanho, l);
-            }
-
-        }
-
-        static void ExibirQtdLinhaDiamante(int tamanho, int linha)
-        {
-            int espaco = Math.Abs((tamanho / 2) - linha);
-            int qtd = tamanho - (espaco * 2);
-
-            string linhaDiamante = new string(' ', espaco) + new string('X', qtd);
-            Console.WriteLine(linhaDiamante);
-        }
-
+        }              
     }
-
 }
