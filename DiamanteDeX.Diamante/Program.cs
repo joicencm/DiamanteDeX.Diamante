@@ -4,10 +4,10 @@
     {
         static void Main(string[] args)
         {
-            ExibirCabecalho();           
+            ExibirCabecalho();
             int numero = ObterNumero();
             ExibirDiamente(numero);
-           
+
             Console.ReadLine();
         }
 
@@ -50,11 +50,11 @@
                 ExibirQtdLinhaDiamante(tamanho, l);
             }
 
-            for (int l = meio -1; l >= 0; l--)
+            for (int l = meio - 1; l >= 0; l--)
             {
                 ExibirQtdLinhaDiamante(tamanho, l);
             }
-                        
+
         }
 
         static void ExibirQtdLinhaDiamante(int tamanho, int linha)
