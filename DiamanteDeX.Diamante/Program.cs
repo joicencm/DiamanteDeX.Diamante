@@ -6,9 +6,8 @@
         {
             ExibirCabecalho();           
             int numero = ObterNumero();
-            ExibirLinhaQtdDiamente(numero);
+            ExibirDiamente(numero);
            
-
             Console.ReadLine();
         }
 
@@ -65,6 +64,7 @@
             }
                         
         }
+
     }
 
 }
